@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
 # s.framework    = ""
 # s.dependency ''
 
-  s.source_files  = "HttpTaxi/**/*.{swift}"
+  s.source_files  = "HttpTaxi/*.{swift}"
 
 # s.resources     = ""
 # s.exclude_files = "Classes/Exclude"
