@@ -10,7 +10,7 @@
 		24ECE6B61D18E86E002F9007 /* HttpTaxi.h in Headers */ = {isa = PBXBuildFile; fileRef = 24ECE6B51D18E86E002F9007 /* HttpTaxi.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		24ECE6C11D1922E3002F9007 /* HttpTaxiConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24ECE6BF1D1922E3002F9007 /* HttpTaxiConstant.swift */; };
 		24ECE6C21D1922E3002F9007 /* HttpTaxi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24ECE6C01D1922E3002F9007 /* HttpTaxi.swift */; };
-		408A5B1752999929B200F4EB /* Pods_HttpTaxi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF2941374B5D71DFDE3E019F /* Pods_HttpTaxi.framework */; };
+		4ED0EEA2C0CF698FEEE7D53B /* libPods-HttpTaxi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E9248D3929A0992B3B004F7 /* libPods-HttpTaxi.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,8 +19,8 @@
 		24ECE6B71D18E86E002F9007 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		24ECE6BF1D1922E3002F9007 /* HttpTaxiConstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpTaxiConstant.swift; sourceTree = "<group>"; };
 		24ECE6C01D1922E3002F9007 /* HttpTaxi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpTaxi.swift; sourceTree = "<group>"; };
+		3E9248D3929A0992B3B004F7 /* libPods-HttpTaxi.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HttpTaxi.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD7CA40B2D698101795211F5 /* Pods-HttpTaxi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HttpTaxi.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HttpTaxi/Pods-HttpTaxi.debug.xcconfig"; sourceTree = "<group>"; };
-		DF2941374B5D71DFDE3E019F /* Pods_HttpTaxi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HttpTaxi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC7976098FA497EE2DB72BFB /* Pods-HttpTaxi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HttpTaxi.release.xcconfig"; path = "Pods/Target Support Files/Pods-HttpTaxi/Pods-HttpTaxi.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -29,7 +29,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				408A5B1752999929B200F4EB /* Pods_HttpTaxi.framework in Frameworks */,
+				4ED0EEA2C0CF698FEEE7D53B /* libPods-HttpTaxi.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,7 +68,7 @@
 		68B6D4200E8A7583CA02529A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				DF2941374B5D71DFDE3E019F /* Pods_HttpTaxi.framework */,
+				3E9248D3929A0992B3B004F7 /* libPods-HttpTaxi.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -100,12 +100,14 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 24ECE6BA1D18E86E002F9007 /* Build configuration list for PBXNativeTarget "HttpTaxi" */;
 			buildPhases = (
+				1286B01F891E172E098EF845 /* 📦 Check Pods Manifest.lock */,
 				781B4BB5F8CFA0F1E653D16E /* [CP] Check Pods Manifest.lock */,
 				24ECE6AD1D18E86E002F9007 /* Sources */,
 				24ECE6AE1D18E86E002F9007 /* Frameworks */,
 				24ECE6AF1D18E86E002F9007 /* Headers */,
 				24ECE6B01D18E86E002F9007 /* Resources */,
 				DA6CF0A525A6831AA6080BDB /* [CP] Copy Pods Resources */,
+				D04B9FB2F9C61E9A5FCB2E8B /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -158,6 +160,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		1286B01F891E172E098EF845 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 		781B4BB5F8CFA0F1E653D16E /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -171,6 +188,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		D04B9FB2F9C61E9A5FCB2E8B /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HttpTaxi/Pods-HttpTaxi-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		DA6CF0A525A6831AA6080BDB /* [CP] Copy Pods Resources */ = {

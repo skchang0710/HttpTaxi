@@ -6,13 +6,13 @@
 //
 import Foundation
 
-class HttpTaxi: NSObject, NSURLSessionDelegate, NSURLSessionTaskDelegate, NSURLSessionDataDelegate  {
+public class HttpTaxi: NSObject, NSURLSessionDelegate, NSURLSessionTaskDelegate, NSURLSessionDataDelegate  {
 
     var host:String
     var timeOutSec:Double
     var delegate:HttpTaxiDelegate
     
-    init(hostURL:String, timeOutSec:Double, httpTaxiDelegate:HttpTaxiDelegate) {
+    public init(hostURL:String, timeOutSec:Double, httpTaxiDelegate:HttpTaxiDelegate) {
         print("HostURL = "+hostURL)
         self.host = hostURL
         self.timeOutSec = timeOutSec
@@ -23,19 +23,19 @@ class HttpTaxi: NSObject, NSURLSessionDelegate, NSURLSessionTaskDelegate, NSURLS
     
     // CORE API
     
-    func callGET(url:String, requestStr:String) {
+    public func callGET(url:String, requestStr:String) {
         let urlString = host+url+"?"+requestStr
         request(urlString, requestDic: nil, httpAction: .GET)
     }
-    func callPOST(url:String, requestDic:Dictionary<String,AnyObject>) {
+    public func callPOST(url:String, requestDic:Dictionary<String,AnyObject>) {
         let urlString = host+url
         request(urlString, requestDic: requestDic, httpAction: .POST)
     }
-    func callPUT(url:String, requestDic:Dictionary<String,AnyObject>) {
+    public func callPUT(url:String, requestDic:Dictionary<String,AnyObject>) {
         let urlString = host+url
         request(urlString, requestDic: requestDic, httpAction: .PUT)
     }
-    func callDELETE(url:String, requestDic:Dictionary<String,AnyObject>) {
+    public func callDELETE(url:String, requestDic:Dictionary<String,AnyObject>) {
         let urlString = host+url
         request(urlString, requestDic: requestDic, httpAction: .DELETE)
     }
@@ -112,7 +112,7 @@ class HttpTaxi: NSObject, NSURLSessionDelegate, NSURLSessionTaskDelegate, NSURLS
     }
 }
 
-protocol HttpTaxiDelegate {
+public protocol HttpTaxiDelegate {
     func httpTaxiBeforeRequest(requestString:String)
     func httpTaxiCallBack (httpTaxiState:HttpTaxiState, statusCode:Int?, json:Dictionary<String, AnyObject>?)
 }
