@@ -1,5 +1,6 @@
 //
 //  HttpTaxi.swift
+//  HttpTaxi
 //
 //  Created by Quincy Chang on 2015/12/24.
 //  Copyright © 2015年 Q_mac. All rights reserved.
@@ -112,7 +113,3 @@ public class HttpTaxi: NSObject, NSURLSessionDelegate, NSURLSessionTaskDelegate,
     }
 }
 
-public protocol HttpTaxiDelegate {
-    func httpTaxiBeforeRequest(requestString:String)
-    func httpTaxiCallBack (httpTaxiState:HttpTaxiState, statusCode:Int?, json:Dictionary<String, AnyObject>?)
-}

@@ -1,6 +1,6 @@
 //
 //  HttpTaxiConstant.swift
-//  Ticket
+//  HttpTaxi
 //
 //  Created by Quincy Chang on 2016/6/21.
 //  Copyright © 2016年 Q_mac. All rights reserved.
